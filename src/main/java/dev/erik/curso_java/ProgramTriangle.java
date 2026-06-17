@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import dev.erik.curso_java.entities.Product;
 
-public class ProgramTwo {
+public class ProgramTriangle {
     public static void main (String[] args){
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
@@ -21,19 +21,19 @@ public class ProgramTwo {
         product.quantity = sc.nextInt();
 
         double total = product.totalValueInStock(product.price, product.quantity);
-        System.out.println(Product.message(product.name, product.price, product.quantity, total));
+        System.out.println(Product.productData(product.name, product.price, product.quantity, total));
 
         System.out.println("Enter the number of products to be added in stoxk: ");
         int quantity = sc.nextInt();
         product.addProducts(quantity);
         total = product.totalValueInStock(product.price, product.quantity);
-        System.out.println(Product.message(product.name, product.price, product.quantity, total));
+        System.out.println(Product.productData(product.name, product.price, product.quantity, total));
 
-        System.out.println("Enter the number of product to be removed in stock: ");
+        System.out.println("Enter the number of product to be removed from stock: ");
         quantity = sc.nextInt();
         product.removeProducts(quantity);
         total = product.totalValueInStock(product.price, product.quantity);
-        System.out.println(Product.message(product.name, product.price, product.quantity, total));
+        System.out.println(Product.productData(product.name, product.price, product.quantity, total));
         
          sc.close();            
     }

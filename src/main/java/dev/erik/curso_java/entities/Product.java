@@ -18,7 +18,7 @@ public class Product {
         this.quantity -= quantity;  
     }
 
-    public static String message(String name, double price, int quantity, double totalValue){
+    public static String productData(String name, double price, int quantity, double totalValue){
         return String.format("Product data: %s, %.2f, %d units, Total: %.2f", name, price, quantity, totalValue );
     }
 
