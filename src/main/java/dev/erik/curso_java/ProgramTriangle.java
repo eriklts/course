@@ -3,38 +3,34 @@ package dev.erik.curso_java;
 import java.util.Locale;
 import java.util.Scanner;
 
-import dev.erik.curso_java.entities.Product;
+import dev.erik.curso_java.entities.Triangle;
 
 public class ProgramTriangle {
-    public static void main (String[] args){
-        Locale.setDefault(Locale.US);
-        Scanner sc = new Scanner(System.in);
 
-        Product product = new Product();
+    public static void main(String[] args) {
+	
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter product data: ");
-        System.out.printf("Name: ");
-        product.name = sc.nextLine();
-        System.out.printf("Price: ");
-        product.price = sc.nextDouble();
-        System.out.printf("Quantity: ");
-        product.quantity = sc.nextInt();
+		Triangle x, y;
+		x = new Triangle();
+		y = new Triangle();
 
-        double total = product.totalValueInStock(product.price, product.quantity);
-        System.out.println(Product.productData(product.name, product.price, product.quantity, total));
+		System.out.println("Enter triangle X dimensure: ");
+		x.a = sc.nextDouble();
+		x.b = sc.nextDouble();
+		x.c = sc.nextDouble();
 
-        System.out.println("Enter the number of products to be added in stoxk: ");
-        int quantity = sc.nextInt();
-        product.addProducts(quantity);
-        total = product.totalValueInStock(product.price, product.quantity);
-        System.out.println(Product.productData(product.name, product.price, product.quantity, total));
+		System.out.println("Enter triangle Y dimensure: ");
+		y.a = sc.nextDouble();
+		y.b = sc.nextDouble();
+		y.c = sc.nextDouble();
 
-        System.out.println("Enter the number of product to be removed from stock: ");
-        quantity = sc.nextInt();
-        product.removeProducts(quantity);
-        total = product.totalValueInStock(product.price, product.quantity);
-        System.out.println(Product.productData(product.name, product.price, product.quantity, total));
-        
-         sc.close();            
-    }
+		double areaX = x.area();
+		double areaY = y.area();
+
+		System.out.printf("Area triangle X: %.4f\n", areaX);
+		System.out.printf("Area triangle Y: %.4f\n", areaY);
+		System.out.println(Triangle.largest(areaX, areaY));
+	}
 }
