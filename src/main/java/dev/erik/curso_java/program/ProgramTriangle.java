@@ -32,5 +32,7 @@ public class ProgramTriangle {
 		System.out.printf("Area triangle X: %.4f\n", areaX);
 		System.out.printf("Area triangle Y: %.4f\n", areaY);
 		System.out.println(Triangle.largest(areaX, areaY));
+
+		sc.close();
 	}
 }

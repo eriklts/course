@@ -1,6 +1,5 @@
 package dev.erik.curso_java.program;
 
-import java.nio.channels.Pipe.SourceChannel;
 import java.util.Locale;
 import java.util.Scanner;
 

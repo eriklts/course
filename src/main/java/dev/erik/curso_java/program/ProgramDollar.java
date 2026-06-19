@@ -21,5 +21,6 @@ public class ProgramDollar {
 
         System.out.printf("Amount to be paid in reais = %.2f", dollar);
 
+        sc.close();;
     }
 }
