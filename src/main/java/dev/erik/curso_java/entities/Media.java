@@ -19,10 +19,9 @@ public class Media {
         }
 
         public double averrage(){
-            if(quantity == 0){
-                return 0;
+            if(quantity <= 0){
+                throw new IllegalArgumentException("A quantidade não pode ser nula ou negativa!");
             }
             return acum / quantity;
         }
-
 }

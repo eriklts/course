@@ -10,30 +10,32 @@ public class ProgramProduct {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        Product product = new Product();
-
         System.out.println("Enter product data: ");
         System.out.printf("Name: ");
-        product.name = sc.nextLine();
+        String name = sc.nextLine();
         System.out.printf("Price: ");
-        product.price = sc.nextDouble();
+        double price = sc.nextDouble();
         System.out.printf("Quantity: ");
-        product.quantity = sc.nextInt();
-
-        double total = product.totalValueInStock(product.price, product.quantity);
-        System.out.println(Product.productData(product.name, product.price, product.quantity, total));
-
-        System.out.println("Enter the number of products to be added in stoxk: ");
         int quantity = sc.nextInt();
-        product.addProducts(quantity);
-        total = product.totalValueInStock(product.price, product.quantity);
-        System.out.println(Product.productData(product.name, product.price, product.quantity, total));
+        Product product = new Product(name, price, quantity);
 
-        System.out.println("Enter the number of product to be removed from stock: ");
+        product.setName("computador");
+        System.out.println();
+        System.out.println("Product data: " + product);
+
+        System.out.printf("Enter the number of products to be added in stock: ");
+        quantity = sc.nextInt();
+        product.addProducts(quantity);
+        
+        System.out.println();
+        System.out.println("Update data: " + product);
+
+        System.out.printf("Enter the number of product to be removed from stock: ");
         quantity = sc.nextInt();
         product.removeProducts(quantity);
-        total = product.totalValueInStock(product.price, product.quantity);
-        System.out.println(Product.productData(product.name, product.price, product.quantity, total));
+
+        System.out.println();
+        System.out.println("Update data: " + product);
         
          sc.close();            
     }
